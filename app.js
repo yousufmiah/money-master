@@ -1,6 +1,6 @@
 // for minus function
-function minus(a, b) {
-  return a - b;
+function minus(income, expense) {
+  return income - expense;
 }
 
 //calculate button
