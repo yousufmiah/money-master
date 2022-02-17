@@ -5,55 +5,53 @@ function minus(a, b) {
 
 //calculate button
 document.getElementById("cal-btn").addEventListener("click", function () {
-  const incomeAmount = document.getElementById("income-amount");
-  const foodAmount = document.getElementById("food-amount");
-  const rentAmount = document.getElementById("rent-amount");
-  const clothesAmount = document.getElementById("clothes-amount");
+  const incomeInput = document.getElementById("income-amount");
+  const foodInput = document.getElementById("food-amount");
+  const rentInput = document.getElementById("rent-amount");
+  const clothesInput = document.getElementById("clothes-amount");
   const totalExpenses = document.getElementById("total-expenses");
 
   if (
-    incomeAmount.value == "" ||
-    incomeAmount.value < 0 ||
-    incomeAmount.Value == NaN
+    incomeInput.value == "" ||
+    incomeInput.value < 0 ||
+    incomeInput.value == NaN
   ) {
     alert("Ohh! Please type only numbers in INCOME.");
   } else if (
-    foodAmount.value == "" ||
-    foodAmount.value < 0 ||
-    foodAmount.value == NaN
+    foodInput.value == "" ||
+    foodInput.value < 0 ||
+    foodInput.value == NaN
   ) {
     alert("Ohh! Please type only numbers in FOOD.");
   } else if (
-    rentAmount.value == "" ||
-    rentAmount.value < 0 ||
-    rentAmount.value == NaN
+    rentInput.value == "" ||
+    rentInput.value < 0 ||
+    rentInput.value == NaN
   ) {
     alert("Ohh! Please type only numbers in RENT.");
   } else if (
-    clothesAmount.value == "" ||
-    clothesAmount.value < 0 ||
-    clothesAmount.value == NaN
+    clothesInput.value == "" ||
+    clothesInput.value < 0 ||
+    clothesInput.value == NaN
   ) {
     alert("Ohh! Please type only numbers in CLOTHES.");
   } else {
     //total expenses
     totalExpenses.innerText =
-      parseFloat(foodAmount.value) +
-      parseFloat(rentAmount.value) +
-      parseFloat(clothesAmount.value);
+      parseFloat(foodInput.value) +
+      parseFloat(rentInput.value) +
+      parseFloat(clothesInput.value);
 
     //total balance
     const balanceAmount = document.getElementById("balance-amount");
+
+    //minus functioner maddome kora
     const balanceAmountInner = minus(
-      parseFloat(incomeAmount.value),
+      parseFloat(incomeInput.value),
       parseFloat(totalExpenses.innerText)
     );
-    const totalExpensesValue = parseFloat(totalExpenses.innerText);
-    if (balanceAmountInner > totalExpensesValue) {
-      balanceAmount.innerText = balanceAmountInner;
-    } else {
-      alert("Please reduce your Expenses.");
-    }
+
+    balanceAmount.innerText = balanceAmountInner;
   }
 });
 
@@ -83,7 +81,7 @@ document.getElementById("save-btn").addEventListener("click", function () {
     savingAmount.innerText =
       (parseFloat(incomeAmount.value) * parseFloat(saveAmount.value)) / 100;
 
-    //remaining amount
+    //minus function er maddome kora remaining amount
     remainingAmount.innerText = minus(
       parseFloat(balanceAmount.innerText),
       parseFloat(savingAmount.innerText)

@@ -5,3 +5,18 @@ git commit -m "first commit"
 git branch -M main
 git remote add origin https://github.com/Porgramming-Hero-web-course/money-master-yousufmiah.git
 git push -u origin main
+
+============
+============
+
+
+
+
+main link: 
+https://github.com/Porgramming-Hero-web-course/money-master-yousufmiah
+===================
+==============
+
+git remote add origin https://github.com/Porgramming-Hero-web-course/money-master-yousufmiah.git
+git branch -M main
+git push -u origin main
