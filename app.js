@@ -1,4 +1,4 @@
-// for minus function
+// minus function
 function minus(income, expense) {
   return income - expense;
 }
@@ -48,7 +48,7 @@ document.getElementById("cal-btn").addEventListener("click", function () {
       parseFloat(clothesInput.value);
 
     //total balance
-    const balanceAmount = document.getElementById("balance-amount");
+    let balanceAmount = document.getElementById("balance-amount");
 
     //minus functioner maddome kora
     let balanceAmountInner = minus(
