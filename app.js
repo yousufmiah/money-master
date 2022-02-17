@@ -11,6 +11,9 @@ document.getElementById("cal-btn").addEventListener("click", function () {
   const clothesInput = document.getElementById("clothes-amount");
   const totalExpenses = document.getElementById("total-expenses");
 
+  const income1 = incomeInput.value;
+  console.log(typeof income1);
+
   if (
     incomeInput.value == "" ||
     incomeInput.value < 0 ||
@@ -57,29 +60,29 @@ document.getElementById("cal-btn").addEventListener("click", function () {
 
 //save button
 document.getElementById("save-btn").addEventListener("click", function () {
-  const incomeAmount = document.getElementById("income-amount");
+  const incomeInput = document.getElementById("income-amount");
   const balanceAmount = document.getElementById("balance-amount");
 
-  const saveAmount = document.getElementById("save-amount");
+  const saveInput = document.getElementById("save-amount");
   const savingAmount = document.getElementById("saveing-amount");
   const remainingAmount = document.getElementById("remaining-amount");
 
   if (
-    incomeAmount.value == "" ||
-    incomeAmount.value < 0 ||
-    incomeAmount.value == NaN
+    incomeInput.value == "" ||
+    incomeInput.value < 0 ||
+    incomeInput.value == NaN
   ) {
     alert("Ohh! Please type only numbers in INCOME.");
   } else if (
-    saveAmount.value == "" ||
-    saveAmount.value <= 0 ||
-    saveAmount.value == NaN
+    saveInput.value == "" ||
+    saveInput.value <= 0 ||
+    saveInput.value == NaN
   ) {
     alert("Ohh! Please type only numbers in SAVE.");
   } else {
     //saving amount
     savingAmount.innerText =
-      (parseFloat(incomeAmount.value) * parseFloat(saveAmount.value)) / 100;
+      (parseFloat(incomeInput.value) * parseFloat(saveInput.value)) / 100;
 
     //minus function er maddome kora remaining amount
     remainingAmount.innerText = minus(
