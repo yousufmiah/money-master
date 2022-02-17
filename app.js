@@ -11,28 +11,33 @@ document.getElementById("cal-btn").addEventListener("click", function () {
   const clothesInput = document.getElementById("clothes-amount");
   const totalExpenses = document.getElementById("total-expenses");
 
+  let incomeValue = Number(incomeInput.value);
+  let foodValue = Number(foodInput.value);
+  let rentValue = Number(rentInput.value);
+  let clothesValue = Number(clothesInput.value);
+
   if (
     incomeInput.value == "" ||
     incomeInput.value < 0 ||
-    incomeInput.value == NaN
+    Number.isNaN(incomeValue)
   ) {
     alert("Ohh! Please type only numbers in INCOME.");
   } else if (
     foodInput.value == "" ||
     foodInput.value < 0 ||
-    foodInput.value == NaN
+    Number.isNaN(foodValue)
   ) {
     alert("Ohh! Please type only numbers in FOOD.");
   } else if (
     rentInput.value == "" ||
     rentInput.value < 0 ||
-    rentInput.value == NaN
+    Number.isNaN(rentValue)
   ) {
     alert("Ohh! Please type only numbers in RENT.");
   } else if (
     clothesInput.value == "" ||
     clothesInput.value < 0 ||
-    clothesInput.value == NaN
+    Number.isNaN(clothesValue)
   ) {
     alert("Ohh! Please type only numbers in CLOTHES.");
   } else {
@@ -75,16 +80,19 @@ document.getElementById("save-btn").addEventListener("click", function () {
   const savingAmount = document.getElementById("saveing-amount");
   const remainingAmount = document.getElementById("remaining-amount");
 
+  let incomeValue = Number(incomeInput.value);
+  let saveValue = Number(saveInput.value);
+
   if (
     incomeInput.value == "" ||
     incomeInput.value < 0 ||
-    incomeInput.value == NaN
+    Number.isNaN(incomeValue)
   ) {
-    alert("Ohh! Please type only numbers in INCOME.");
+    alert("Please fillup above fields by number.");
   } else if (
     saveInput.value == "" ||
     saveInput.value <= 0 ||
-    saveInput.value == NaN
+    Number.isNaN(saveValue)
   ) {
     alert("Ohh! Please type only numbers in SAVE.");
   } else {
