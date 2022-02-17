@@ -98,9 +98,13 @@ document.getElementById("save-btn").addEventListener("click", function () {
       parseFloat(savingAmountInner)
     );
 
-    savingAmount.innerText = savingAmountInner;
-    remainingAmount.innerText = remainingAmountInner;
-    console.log(typeof savingAmountInner);
-    console.log(typeof remainingAmountInner);
+    if (remainingAmountInner > savingAmountInner) {
+      savingAmount.innerText = savingAmountInner;
+      remainingAmount.innerText = remainingAmountInner;
+      saveInput.value = "";
+    } else {
+      alert("Please reduce saving percetage number.");
+      saveInput.value = "";
+    }
   }
 });
