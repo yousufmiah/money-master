@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monthly Accounts</title>
+    <!-- bootstrap stylesheet -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- custome style -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- fontawsome -->
+    <script
+      src="https://kit.fontawesome.com/113a454344.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+
+    <!-- header start -->
+    <header>
+      <section class="container my-5">
+        <div class="row">
+          <div class="col-lg-12 col-sm-12">
+            <div class=" pt-3 border bg-primary text-center rounded-3">
+              <h1 class="text-white">Monthly Accounts</h1>
+              <img src="" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+  </header>
+
+      <!-- image -->
+    <section class="container my-5">
+      <main class="row row-cols-1 row-cols-sm-1 row-cols-lg-2 g-4">
+      <div class="col">
+        <div class="card border-0 shadow-lg h-100">
+      <img src="images/monthly2.jpg" class="card-img-top" alt="..." />
+    </div>
+  </div>
+
+<!-- accounts part -->
+  <div class="col">
+    <div class="card border-0 shadow-lg h-100">
+    <h4 class="text-center mt-4">Income</h4>
+
+     <!-- income -->
+<div class="text-center">
+  <div>
+    <label>Income:</label>
+    <input id="income-amount" type="text">
+  </div>
+
+<!-- expenses -->
+  <h4 class="text-center mt-5">Expenses</h4>
+  <div class="mb-2">
+    <label>Food:</label>
+    <input id="food-amount" type="text">
+   </div>
+  <div class="mb-2">
+    <label>Rent : </label>
+    <input id="rent-amount" type="text">
+  </div>
+  <div>
+    <label>Clothes:</label>
+    <input id="clothes-amount" type="text">
+  </div>
+
+<!-- calculate -->
+  <button id="cal-btn" class="btn btn-primary btn-lg mt-5 px-5">Calculate</button>
+
+<!-- total expenses -->
+  <h4 class="mt-4">Total Expenses: <span id="total-expenses">0</span> </h4>
+
+<!-- total balance -->
+  <h4 class="mt-4">Balance: <span id="balance-amount">0</span></h4>
+  
+<!-- savings part --> 
+  <div class="mt-5">
+    <label>Save:</label>
+    <input id="save-amount" class="text-center" type="text">
+    %
+    <button id="save-btn" class="btn btn-primary btn-lg px-5">Save</button>
+  </div>
+
+<!-- saving amount -->
+  <div>
+    <h4  class="mt-2">Saving Amount: <span id="saveing-amount">0</span> </h4>
+
+<!-- remaining balace -->
+    <h4 class="mt-2">Remaining Balance: <span id="remaining-amount">0</span> </h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script src="app.js"></script>
+  </body>
+</html>
