@@ -89,13 +89,18 @@ document.getElementById("save-btn").addEventListener("click", function () {
     alert("Ohh! Please type only numbers in SAVE.");
   } else {
     //saving amount
-    savingAmount.innerText =
+    let savingAmountInner =
       (parseFloat(incomeInput.value) * parseFloat(saveInput.value)) / 100;
 
     //minus function er maddome kora remaining amount
-    remainingAmount.innerText = minus(
+    let remainingAmountInner = minus(
       parseFloat(balanceAmount.innerText),
-      parseFloat(savingAmount.innerText)
+      parseFloat(savingAmountInner)
     );
+
+    savingAmount.innerText = savingAmountInner;
+    remainingAmount.innerText = remainingAmountInner;
+    console.log(typeof savingAmountInner);
+    console.log(typeof remainingAmountInner);
   }
 });
