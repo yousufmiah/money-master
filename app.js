@@ -11,9 +11,6 @@ document.getElementById("cal-btn").addEventListener("click", function () {
   const clothesInput = document.getElementById("clothes-amount");
   const totalExpenses = document.getElementById("total-expenses");
 
-  const income1 = incomeInput.value;
-  console.log(typeof income1);
-
   if (
     incomeInput.value == "" ||
     incomeInput.value < 0 ||
@@ -40,7 +37,7 @@ document.getElementById("cal-btn").addEventListener("click", function () {
     alert("Ohh! Please type only numbers in CLOTHES.");
   } else {
     //total expenses
-    totalExpenses.innerText =
+    let totalExpensesInner =
       parseFloat(foodInput.value) +
       parseFloat(rentInput.value) +
       parseFloat(clothesInput.value);
@@ -49,12 +46,23 @@ document.getElementById("cal-btn").addEventListener("click", function () {
     const balanceAmount = document.getElementById("balance-amount");
 
     //minus functioner maddome kora
-    const balanceAmountInner = minus(
+    let balanceAmountInner = minus(
       parseFloat(incomeInput.value),
-      parseFloat(totalExpenses.innerText)
+      parseFloat(totalExpensesInner)
     );
 
-    balanceAmount.innerText = balanceAmountInner;
+    if (balanceAmountInner > totalExpensesInner) {
+      totalExpenses.innerText = totalExpensesInner;
+      balanceAmount.innerText = balanceAmountInner;
+      foodInput.value = "";
+      rentInput.value = "";
+      clothesInput.value = "";
+    } else {
+      alert("Please reduce expeses number.");
+      foodInput.value = "";
+      rentInput.value = "";
+      clothesInput.value = "";
+    }
   }
 });
 
